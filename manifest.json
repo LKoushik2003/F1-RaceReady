@@ -1,0 +1,13 @@
+{
+    "name": "F1 RaceReady",
+    "version": "1.0",
+    "description": "This is an extension that shows details of the upcoming F1 weekend",
+    "manifest_version": 3,
+    "icons": {},
+    "action": {
+    "default_popup": "popup.html",
+    "default_icon": ""
+    },
+    "permissions": ["storage", "alarms", "notifications", "tabs", "geolocation"],
+    "host_permissions": []
+}
