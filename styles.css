@@ -1,3 +1,8 @@
+html
+{
+    width: 400px;  /* max: 800px */
+    height: 300px; /* max: 600px */
+}
 
 .table-container {
     border: 1.5px solid;
