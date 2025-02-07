@@ -6,7 +6,7 @@
     "icons": {},
     "action": {
     "default_popup": "popup.html",
-    "default_icon": ""
+    "default_icon": "f1_logo_fallback.png"
     },
     "permissions": ["storage", "alarms", "notifications", "tabs", "geolocation"],
     "host_permissions": []
