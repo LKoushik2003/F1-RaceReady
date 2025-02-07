@@ -1,0 +1,25 @@
+
+.table-container {
+    border: 1.5px solid;
+    border-radius: 10px;   /* Rounded corners for the container */
+    overflow: hidden;      /* Ensures the table doesn't spill over the rounded corners */
+    display: inline-block; /* Keeps the container sized to the table */
+}
+
+table,th,td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+th {
+    background-color: rgb(254, 84, 84);
+}
+
+tr {
+    background-color: rgb(255, 209, 209);
+}
+
+tr:hover {
+    background-color: rgb(253, 165, 165);
+}
