@@ -21,10 +21,28 @@ function getUserTime(){
     const date = String(now.getUTCDate()).padStart(2,'0');
     const hour = String(now.getUTCHours()).padStart(2,'0');
     const minutes = String(now.getUTCMinutes()).padStart(2,'0');
+    const seconds = String(now.getUTCSeconds()).padStart(2,'0');
+
+    const dateString = `${year}-${month}-${date}`;
+    const timeString = `${hour}:${minutes}:${seconds}`;
     
-    //holding seconds part of timer
-    //const seconds = String(now.getUTCSeconds()).padStart(2,'0');
-    console.log(now +' '+ year+' ' + month+' ' + date+' ' + hour+' ' + minutes)
+    return {
+        date: dateString,
+        time: timeString,
+        dateAndTime: new Date(`${dateString}T${timeString}Z`)
+    };
 }
 
+
 getUserTime();
+
+async function selectRaceWeekend(data){
+    try{
+        const response = await fetch("data.json");
+        const scheduleJson = await response.json();
+    } catch(error){
+
+    }
+}
+
+
