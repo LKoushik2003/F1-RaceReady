@@ -11,7 +11,7 @@ function getUserTimeZone() {
   
 const userTimeZone = getUserTimeZone(); 
   
-function getTime(){
+function getCurrentTime(){
     const now = new Date();
     const year = now.getUTCFullYear();
     const month = String(now.getUTCMonth()+1).padStart(2,'0');
@@ -31,13 +31,13 @@ function getTime(){
 }
 
 
-getTime();
+getCurrentTime();
 
 async function selectRaceWeekend(data){
     try{
         const response = await fetch("data.json");
         const scheduleJson = await response.json();
-        const { date: currentUTCDate, time: currentUTCTime } = getTime();
+        const { date: currentUTCDate, time: currentUTCTime } = getCurrentTime();
 
         for (const race of scheduleJson.RaceTable.Races) {
             const sessions = [
@@ -63,7 +63,7 @@ async function selectRaceWeekend(data){
 }
 
 async function updateTable(){
-    const race = await selectRaceWeekend(getTime);
+    const race = await selectRaceWeekend(getCurrentTime);
 
     const tableBody = document.querySelector("#raceTable tbody");
     tableBody.innerHTML = "";
@@ -94,6 +94,34 @@ async function updateTable(){
 
 document.addEventListener("DOMContentLoaded", () => {
     updateTable();
+    countdownTimer();
   });
 
 
+  function getEndTime() {
+    return "March 14, 2025 01:30:00";
+  }
+
+//function for countdown timer
+//takes input as date+time and id of element where timer should be added
+function countdownTimer(nextTime){
+    
+    //getEndTime placeholder for function to get time of the next session
+    const endDate = new Date(getEndTime()).getTime();
+    const timerInterval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.getElementById("countdown").innerHTML = "Session Over";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById("countdown").innerHTML =`${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+}
