@@ -8,58 +8,64 @@
 </head>
 <body>
     <h1>F1 RaceReady</h1>
-    <div>Upcoming/Current Race:</div>
+    <div>Race Weekend:</div>
 
-    <div>FORMULA 1 LOUIS VUITTON AUSTRALIAN GRAND PRIX 2025</div>
+    <div id="raceName"></div>
     
-    <p>My Time | Track Time</p>
+    <p>My Time | UTC</p>
 
     <div class="table-container">
-    <table>
-        <tr>
-            <th>Session</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Notify me</th>
-            <th>Status</th>
-        </tr>
-        <tr>
-            <td>FP1</td>
-            <td>dd-mm-yyyy</td>
-            <td>xx:xx</td>
-            <td><input type="checkbox"></td>
-            <td>Completed</td>
-        </tr>
-        <tr>
-            <td>FP2</td>
-            <td>dd-mm-yyyy</td>
-            <td>xx:xx</td>
-            <td><input type="checkbox"></td>
-            <td>Completed</td>
-        </tr>
-        <tr>
-            <td>FP3</td>
-            <td>dd-mm-yyyy</td>
-            <td>xx:xx</td>
-            <td><input type="checkbox"></td>
-            <td>Ongoing</td>
-        </tr>
-        <tr>
-            <td>Qualifying</td>
-            <td>dd-mm-yyyy</td>
-            <td>xx:xx</td>
-            <td><input type="checkbox"></td>
-            <td>*Timer</td>
-        </tr>
-        <tr>
-            <td>Race</td>
-            <td>dd-mm-yyyy</td>
-            <td>xx:xx</td>
-            <td><input type="checkbox"></td>
-            <td>Upcoming</td>
-        </tr>
+    <table id="raceTable">
+        <thead>
+            <tr>
+                <th>Session</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Notify me</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>FP1</td>
+                <td>dd-mm-yyyy</td>
+                <td>xx:xx</td>
+                <td><input type="checkbox"></td>
+                <td>Completed</td>
+            </tr>
+            <tr>
+                <td>FP2</td>
+                <td>dd-mm-yyyy</td>
+                <td>xx:xx</td>
+                <td><input type="checkbox"></td>
+                <td>Completed</td>
+            </tr>
+            <tr>
+                <td>FP3</td>
+                <td>dd-mm-yyyy</td>
+                <td>xx:xx</td>
+                <td><input type="checkbox"></td>
+                <td>Ongoing</td>
+            </tr>
+            <tr>
+                <td>Qualifying</td>
+                <td>dd-mm-yyyy</td>
+                <td>xx:xx</td>
+                <td><input type="checkbox"></td>
+                <td>*Timer</td>
+            </tr>
+            <tr>
+                <td>Race</td>
+                <td>dd-mm-yyyy</td>
+                <td>xx:xx</td>
+                <td><input type="checkbox"></td>
+                <td>Upcoming</td>
+            </tr>
+        </tbody>
     </table>
     </div>
+    <div id="countdown">countdown</div>
     
     <script src="popup.js"></script>
 </body>
