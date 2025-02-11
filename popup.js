@@ -8,10 +8,6 @@ function getUserTimeZone() {
         return "UTC";
     }
 }
-  
-  
-  // To call timezone function
-  
   const userTimeZone = getUserTimeZone(); 
   
 function getUserTime(){
