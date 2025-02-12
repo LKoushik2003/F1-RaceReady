@@ -33,6 +33,12 @@ function getCurrentTime(){
 
 getCurrentTime();
 
+// function to change the format of the dates from yyyy-mm-dd to dd-mm-yyyy
+function formatDate(dateString) {
+    const [year, month, day] = dateString.split("-");
+    return `${day}-${month}-${year}`;
+}
+
 async function selectRaceWeekend(data){
     try{
         const response = await fetch("data.json");
@@ -82,7 +88,7 @@ async function updateTable(){
           <td>${session.name}</td>
           <td>${session.date}</td>
           <td>${session.time} UTC</td>
-          <td><button class="notify-btn" data-date="${session.date}" data-time="${session.time}">🔔</button></td>
+          <td><input type="checkbox" data-date="${session.date}" data-time="${session.time}"></td>
           <td class="status">Upcoming</td>
         `;
         tableBody.appendChild(row);
